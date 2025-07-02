@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Embedding & Query System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF Embedding & Query System</h1>
+        
+        <div class="section">
+            <h2>Upload PDF</h2>
+            <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                <p>Click here to select a PDF file</p>
+                <input type="file" id="fileInput" class="file-input" accept=".pdf">
+            </div>
+            <div id="fileInfo" class="file-info" style="display: none;"></div>
+            <button id="uploadBtn" class="btn" disabled>Process & Store PDF</button>
+            <div id="uploadStatus"></div>
+        </div>
+
+        <div class="section">
+            <h2>Query Documents</h2>
+            <label for="queryInput">Enter your question:</label>
+            <textarea id="queryInput" placeholder="What would you like to know about the documents?"></textarea>
+            <button id="queryBtn" class="btn">Search</button>
+            <div id="queryStatus"></div>
+            <div id="queryResults" class="results"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
